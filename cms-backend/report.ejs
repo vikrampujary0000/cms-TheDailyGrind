@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .header h3 {
+            color: #555;
+            font-weight: normal;
+        }
+
+        .customer-details,
+        .product-details {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+
+        .customer-details th,
+        .product-details th {
+            text-align: left;
+            padding: 8px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+        }
+
+        .customer-details td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            color: #666;
+        }
+
+        .product-details td {
+            text-align: center;
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .product-details th {
+            color: #333;
+        }
+
+        .total-amount {
+            text-align: right;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>The Daily Grind</h1>
+        <h3>Thank you for your visit!</h3>
+    </div>
+
+    <table class="customer-details">
+        <tr>
+            <th>Name:</th>
+            <td>
+                <%= name %>
+            </td>
+            <th>Email:</th>
+            <td>
+                <%= email %>
+            </td>
+        </tr>
+        <tr>
+            <th>Contact Number:</th>
+            <td>
+                <%= contactNumber %>
+            </td>
+            <th>Payment Method:</th>
+            <td>
+                <%= paymentMethod %>
+            </td>
+        </tr>
+    </table>
+
+    <h3>Product Details</h3>
+    <table class="product-details">
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Sub Total</th>
+        </tr>
+        <% if (productDetails.length> 0) { %>
+            <% productDetails.forEach(product=> { %>
+                <tr>
+                    <td>
+                        <%= product.name %>
+                    </td>
+                    <td>
+                        <%= product.category %>
+                    </td>
+                    <td>
+                        <%= product.quantity %>
+                    </td>
+                    <td>₹<%= product.price.toFixed(2) %>
+                    </td>
+                    <td>₹<%= product.total.toFixed(2) %>
+                    </td>
+                </tr>
+                <% }); %>
+                    <% } %>
+    </table>
+
+    <div class="total-amount">
+        <p>Total: ₹<%= totalAmount.toFixed(2) %>
+        </p>
+    </div>
+
+    <div class="footer">
+        <p>We hope you enjoyed your experience. Please visit again!</p>
+    </div>
+</body>
+
+</html>

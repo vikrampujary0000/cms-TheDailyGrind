@@ -1,0 +1,39 @@
+<body>
+
+    <mat-card class="dashboard-title">
+        <h2>Dashboard</h2>
+    </mat-card>
+    <br>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2 class="title">Total Category: </h2>
+                    <h3 class="title">{{data.category}}</h3>
+                    <button mat-flat-button class="button" [routerLink]="['/cafe/category']">View Category</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2 class="title">Total Products: </h2>
+                    <h3 class="title">{{data.product}}</h3>
+                    <button mat-flat-button class="button" [routerLink]="['/cafe/product']">View Products</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2 class="title">Total Bill: </h2>
+                    <h3 class="title">{{data.bill}}</h3>
+                    <button mat-flat-button class="button" [routerLink]="['/cafe/bill']">View Bill</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

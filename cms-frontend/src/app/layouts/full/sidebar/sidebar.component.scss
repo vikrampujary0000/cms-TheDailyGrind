@@ -1,0 +1,13 @@
+mat-nav-list .selected {
+  background-color: #3451b5;
+}
+
+mat-nav-list .selected .list-links {
+  color: white;
+}
+
+.list-links {
+  text-decoration: none;
+  padding: 2.5rem 1.5rem;
+  color: black;
+}
