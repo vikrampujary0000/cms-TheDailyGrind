@@ -15,7 +15,7 @@ async function signupLogic(user) {
     if (results.length === 0) {
         const hashedPassword = await bcrypt.hash(user.password, 10);
 
-        query = "INSERT INTO users (name, contactNumber, email, password, status, role) VALUES ($1, $2, $3, $4, 'false', 'user')";
+        query = "INSERT INTO users (name, contactNumber, email, password, status, role) VALUES ($1, $2, $3, $4, 'true', 'user')";
         await sequelize.query(query, {
             bind: [user.name, user.contactNumber, user.email, hashedPassword],
             type: Sequelize.QueryTypes.INSERT
