@@ -22,6 +22,12 @@
             </div>
         </form>
     </mat-dialog-content>
+  <!-- Test Credentials Section -->
+    <div class="credentials-section" style="text-align: center; margin-top: 20px;">
+        <p><strong>Test Credentials for Demo:</strong></p>
+        <p><strong>Admin:</strong> {{'admin@gmail.com'}} / 123456</p>
+        <p><strong>Demo User:</strong> {{'demo@gmail.com'}} / 123456</p>
+    </div>
     <mat-dialog-actions align="center">
         <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid"
             (click)="handleSubmit()">Login</button>
